@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triveni Mitra Mandal Marathi Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5deb3 0%, #daa520 50%, #b8860b 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #f5f0e6 0%, #e6d5a8 50%, #d4a574 100%);
+            border: 4px solid #8b4513;
+            border-radius: 15px;
+            padding: 30px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                max-width: 100%;
+                padding: 20px 15px;
+                border-radius: 10px;
+                border-width: 3px;
+            }
+        }
+        
+        .corner-decoration {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #8b4513;
+        }
+        
+        .corner-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+        .corner-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+        .corner-bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+        .corner-br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+        
+        .logo-placeholder {
+            width: 232px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        
+        .header-with-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 0;
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #8b4513 100%);
+            padding: 20px;
+        }
+        
+        .header-logo {
+            flex-shrink: 0;
+            width: 180px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0.9) sepia(0.3);
+        }
+        
+        .header-text {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .header-text h1 {
+            color: #f5deb3;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .header-text h2 {
+            color: #fff8dc;
+            font-size: 28px;
+            margin-bottom: 3px;
+        }
+        
+        .header-text-sub {
+            color: #daa520;
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+        
+        .library-image-container {
+            text-align: center;
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #8b4513 100%);
+            padding: 15px;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .library-image-container img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            filter: sepia(0.2) brightness(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .combined-header {
+            border: 3px solid #8b4513;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 640px) {
+            .header-with-logo {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+            
+            .header-logo {
+                width: 150px;
+                height: 75px;
+            }
+            
+            .header-text h2 {
+                font-size: 24px;
+            }
+            
+            .library-image-container {
+                padding: 12px;
+            }
+        }
+        
+        .section {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border-left: 4px solid #a0522d;
+            border-radius: 5px;
+        }
+        
+        .section-title {
+            color: #8b4513;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            font-size: 20px;
+        }
+        
+        .section-content {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 640px) {
+            .section-title {
+                font-size: 16px;
+            }
+            
+            .section-content {
+                font-size: 14px;
+            }
+            
+            .section {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+        }
+        
+        .section-content strong {
+            color: #8b4513;
+        }
+        
+        a {
+            color: #d9534f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            color: #a0522d;
+            text-decoration: underline;
+        }
+        
+        .volunteer-section {
+            background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
+            color: #fff8dc;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .volunteer-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .volunteer-section p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .contact-section {
+            background: #f5f0e6;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .contact-title {
+            color: #8b4513;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .contact-person {
+            margin-bottom: 15px;
+        }
+        
+        .contact-name {
+            color: #a0522d;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .contact-phone {
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-tr"></div>
+        <div class="corner-decoration corner-bl"></div>
+        <div class="corner-decoration corner-br"></div>
+        
+        <div class="combined-header">
+            <div class="header-with-logo">
+                <div class="header-logo">
+                    <img src="https://tmmcommunications2026-max.github.io/marathi-library/tmm-2026.jpg" alt="Triveni Mitra Mandal Logo" />
+                </div>
+                <div class="header-text">
+                    <h1>Welcome to</h1>
+                    <h2>Marathi Library</h2>
+                    <div class="header-text-sub">Triveni Mitra Mandal</div>
+                </div>
+            </div>
+            
+            <div class="library-image-container">
+                <img src="https://tmmcommunications2026-max.github.io/marathi-library/library-flyer.jpg" alt="Library Illustration" />
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">⏰</span>
+                Library Hours
+            </div>
+            <div class="section-content">
+                <strong>Pickup & Return:</strong><br>
+                1st & 4th Thursday of each month<br>
+                <span style="color: #d9534f; font-weight: bold;">6:00 PM – 7:00 PM</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📍</span>
+                Venue
+            </div>
+            <div class="section-content">
+                5097 Ainsley Dr, Mason, OH
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📅</span>
+                Start Date
+            </div>
+            <div class="section-content">
+                Borrowing begins from Thursday, <strong>January 29th, 2026</strong>.
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📚</span>
+                Browse Books
+            </div>
+            <div class="section-content">
+                Explore our collection online:<br>
+                <a href="https://www.libib.com/u/tmmmarathilibrary">https://www.libib.com/u/tmmmarathilibrary</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">✨</span>
+                Eligibility
+            </div>
+            <div class="section-content">
+                Exclusive facility for Triveni Mitra Mandal members only.
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">📖</span>
+                Borrowing Limit
+            </div>
+            <div class="section-content">
+                2 Books per family for up to 4 weeks.
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">✏️</span>
+                Registration
+            </div>
+            <div class="section-content">
+                Sign up easily via the form on the TMM website.<br>
+                <a href="https://www.triveni-mandal.org/account/blank">https://www.triveni-mandal.org/account/blank</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">💬</span>
+                Updates
+            </div>
+            <div class="section-content">
+                Join the <strong>"TMM Marathi Library"</strong> WhatsApp group.
+            </div>
+        </div>
+        
+        <div class="volunteer-section">
+            <h3>🤝 Become a Volunteer</h3>
+            <p>This library is run by community volunteers.<br>
+            Contact the committee if you wish to help preserve our culture.</p>
+        </div>
+        
+        <div class="contact-section">
+            <div class="contact-title">Donations & Inquiries</div>
+            <div style="display: flex; justify-content: center; gap: 30px; font-size: 14px;">
+                <div><strong style="color: #a0522d;">Nilai:</strong> 📞 650-670-6665</div>
+                <div><strong style="color: #a0522d;">Pooja:</strong> 📞 510-579-1463</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
