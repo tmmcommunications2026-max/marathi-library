@@ -186,6 +186,47 @@
             font-size: 15px;
             line-height: 1.6;
         }
+
+        .message {
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--deep-orange) 100%);
+            padding: 4rem 2.5rem 3rem;
+            margin: 20px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px),
+                repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px);
+            pointer-events: none;
+        }
+
+        .today-icon {
+            text-align: center;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+      .main-title {
+            font-family: 'Fraunces', serif;
+            font-size: 4rem;
+            color: var(--cream);
+            text-align: center;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.02em;
+            animation: fadeInUp 0.8s ease-out;
+        }
         
         @media (max-width: 640px) {
             .section-title {
@@ -289,6 +330,11 @@
                 <img src="https://tmmcommunications2026-max.github.io/marathi-library/library-flyer.jpg" alt="Library Illustration" />
             </div>
         </div>
+
+        <div class="message">
+            <div class="today-icon">📚</div>
+            <h1 class="main-title">Library Day<br>TODAY!</h1>
+        </div>
         
         <div class="section">
             <div class="section-title">
@@ -391,3 +437,4 @@
 </body>
 
 </html>
+
