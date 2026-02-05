@@ -189,25 +189,13 @@
 
         
         .message {
-            background: linear-gradient(135deg, var(--burgundy) 0%, var(--deep-orange) 100%);
+            background: var(--burgundy);
             padding: 2rem 2.5rem 1.5rem;
             margin: 20px 0 0;
             position: relative;
             overflow: hidden;
         }
 
-        .message::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px),
-                repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px);
-            pointer-events: none;
-        }
 
         .today-icon {
             text-align: center;
@@ -439,5 +427,6 @@
 </body>
 
 </html>
+
 
 
